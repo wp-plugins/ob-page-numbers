@@ -5,7 +5,7 @@ Author: Olly Benson, Jens T&ouml;rnell
 Author URI: http://code.olib.co.uk
 Tags: navigation, paging, page, numbers, archive, categories, plugin, seo
 Tested up to: 3.2.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 
 A simple paging navigation plugin for users and search engines. Instead of next and previous page it shows numbers and arrows. Settings available.
 
@@ -48,13 +48,16 @@ Below are the five styles you can choose from:
 5. Tiny
 
 
-== Frequently Asked Questions ==
+== Changelog ==
+
+= Verson 1.1.1 =
+
+This update fixes a bug that means the final page is missed off the pagination list.
+
+
+== Reporting bugs ==
 
 = How do I report a bug? =
 
 * Contact me <a href="http://code.olib.co.uk/2011/11/20/wordpress-page-numbers-2/">here</a>. 
 * Describe the problem as well as you can, your plugin version, Wordpress version and possible conflicting plugins and so on.
-
-= How can I support this plugin? =
-
-Spread the word, report bugs and give me feedback.
