@@ -55,8 +55,6 @@ Below are the five styles you can choose from:
 This update fixes a bug that means the final page is missed off the pagination list.
 
 
-== Reporting bugs ==
-
 = How do I report a bug? =
 
 * Contact me <a href="http://code.olib.co.uk/2011/11/20/wordpress-page-numbers-2/">here</a>. 
