@@ -3,7 +3,7 @@
 Plugin Name: OB Page Numbers
 Plugin URI: http://code.olib.co.uk
 Description: A simple paging navigation plugin for users and search engines. Instead of next and previous page it shows numbers and arrows. Settings available..
-Version: 1.1
+Version: 1.1.1
 Author: Olly Benson, Jens T&ouml;rnell
 Author URI: http://code.olib.co.uk
 */
@@ -50,10 +50,11 @@ function action() {
 	$current_page = (!empty($paged)) ? $paged : 1; // current page
 
 	$min_page = $current_page - floor(intval($limitPages)/2); // works out the lowest page number to be displayed
+	$limitPages = (intval($limitPages)-1);
 	if ($min_page<1) $min_page=1;
-	$max_page = $min_page + intval($limitPages); // words out the highest page number to be displayed
+	$max_page = $min_page + $limitPages; // words out the highest page number to be displayed
 	if ($max_page>$total_pages) $max_page=$total_pages;
-	if ($max_page==$total_pages && $max_page>$limitPages) $min_page= ($max_page-intval($limitPages)); // changes min_page if max is last page
+	if ($max_page==$total_pages && $max_page>$limitPages) $min_page= ($max_page-$limitPages); // changes min_page if max is last page
 
 	$pagingString = "<div id='wp_page_numbers'><ul>"; // builds output
 
@@ -72,7 +73,7 @@ function action() {
 		}
 
 	// displays lowest to highest page
-	for($i=$min_page; $i<$max_page; $i++) 
+	for($i=$min_page; $i<=$max_page; $i++) 
 		$pagingString.= ($current_page == $i) ? 
 			sprintf("<li class='active_page'><a>%u</a></li>\n",$i) :	
 			sprintf("<li %s><a href='%s'>%u</a></li>\n",($current_page == $i) ? "class='active_page'" : null,get_pagenum_link($i),$i);	
